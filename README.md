@@ -11,6 +11,7 @@ es6新api转换 | `npm install --save @babel/polyfill`<br>`npm install --save-de
 webpack | `npm install webpack webpack-cli -D`
 清除文件插件 | `npm install clean-webpack-plugin -D`
 将JavaScript或者CSS插入<br>到webpack插件生成的HTML中 | `npm install add-asset-html-webpack-plugin -D`
+
 生成`.babelrc`文件，并写入如下代码：
 ```
 {
@@ -34,7 +35,7 @@ webpack | `npm install webpack webpack-cli -D`
 }
 ```
 
-##使用
+## 使用
 1.将`webpack.dll.config.js`、`.babelrc`文件拷贝至项目中
 
 2.修改`webpack.dll.config.js`中的代码
@@ -74,7 +75,7 @@ configureWebpack(config){
 ```
 4.在`package.json`文件中的`script`添加一条命令，`"dll": "webpack -p --progress --config ./webpack.dll.config.js"`
 
-##打包
+## 打包
 在执行打包命令前一定要先执行生成dll文件的命令，即先执行`npm run dll`，然后在执行`npm run build`
 
 运行`npm run dll`命令后会在`/public/dll`目录中生成一个`xxx.dll.js`和`xxx.manifest.json`文件，其中`xxx`就是`webpack.dll.config.js`
